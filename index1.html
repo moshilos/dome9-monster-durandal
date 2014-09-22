@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    <script id="mos" type="text/html" src="templates/dashboard.html"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Dome9</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" data-bind="foreach: menu">
+                    <li data-bind="css: {'active' : $parent.active().action == action }"><a data-bind="text: name, click: $parent.setActive, attr:{href: '#' + action}" ></a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <h3 data-bind="text: title"></h3>
+        <div data-bind="template: {name:'mos'}"></div>
+        <ul class="list-group" data-bind="foreach: data">
+            <li class="list-group-item" data-bind="text: name"></li>
+        </ul>
+    </div>
+    <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <!--<script src="bower_components/knockout.js/knockout.debug.js"></script>-->
+
+    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+
+
+
+</body>
+</html>
